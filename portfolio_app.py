@@ -209,7 +209,7 @@ with col2:
         try:
           sender_email = "zuhaib12325@gmail.com"
           # Replace with your 16-character Google App Password
-          sender_password = "wpqb upyq qntr odtu"
+          sender_password = st.secrets["SENDER_PASSWORD"]
           receiver_email = "zuhaib12325@gmail.com"
 
           msg = MIMEMultipart()
