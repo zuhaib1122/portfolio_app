@@ -1,5 +1,5 @@
 import streamlit as  st
-#import pandas as pd
+import pandas as pd
 st.set_page_config(page_title = 'PORTFOLIO',page_icon= "🚀",  layout = 'wide', initial_sidebar_state = 'auto')
 # sidebar for navigation and contact
 with st.sidebar:
@@ -17,12 +17,11 @@ if selection == 'About me':
     st.markdown(
     """
     ### **Welcome to my professional space**  
-    I am a mathematician, a Python developer, and an HVAC engineering specialist based in Lahore, Pakistan. My career is built on a unique intersection of physical thermodynamics, advanced mathematical logic, and modern data science.
-
-    My journey started in the hands-on world of refrigeration and air-conditioning. With a technical diploma and years of experience manufacturing commercial milk chillers and managing heavy refrigeration machinery, I learned how to troubleshoot complex, real-world physical systems. Today, I combine that industrial knowledge with hardware prototyping, using tools like microcontrollers and temperature sensors—to build intelligent monitoring systems.
-
+    I am a data scientist, Python developer, and mathematician based in Lahore, Pakistan, specializing in transforming raw, complex operational datasets into actionable insights. My work sits at the intersection of advanced mathematical logic, software engineering, and modern data analytics.
+    My journey includes extensive experience in technical data processing, meticulous data entry, and structured analysis. Using Python libraries like Pandas, NumPy, and Scikit-learn, alongside SQL and Excel, I excel at cleaning messy, unstructured inputs, building analytical pipelines, and developing interactive web dashboards with Streamlit. While my foundational background includes hands-on exposure to industrial refrigeration systems and hardware prototyping—such as working with microcontrollers and temperature sensors—my primary expertise is dedicated to solving data-driven problems.
+    I leverage my unique technical perspective to handle the complete data lifecycle: extracting messy records, performing rigorous exploratory data analysis, and designing clean, structured databases that empower informed decision-making.
     ### **The Power of Mathematics and Code**  
-    I hold a Bachelor of Science in Mathematics from the Virtual University of Pakistan, which gave me the analytical foundation to dive deep into Data Science. I specialize in turning raw data into actionable insights using Python libraries (like Pandas, NumPy, and Scikit-learn) and managing databases using SQL and Google BigQuery. I love building interactive web applications and dashboards using Streamlit to make complex data accessible and intuitive. 
+    I hold a Bachelor of Science in Mathematics from the Virtual University of Pakistan, which gave me the analytical foundation to dive deep into Data Science. I specialize in turning raw data into actionable insights using Python libraries (like Pandas, NumPy, and Scikit-learn) and managing databases using Google BigQuery. I love building interactive web applications and dashboards using Streamlit to make complex data accessible and intuitive. 
 
     ### **Mastering Mathematics and Writing Code Without Sight**  
     As a visually impaired developer and educator, my approach to technology is rooted in deep resilience and precision. Through online teaching and academic work, I routinely write complex mathematical equations and technical documents directly into Microsoft Word using screen readers like NVDA and JAWS. Navigating complex programming syntax, debugging Python scripts, and designing functional web apps entirely through auditory feedback requires immense focus. 
@@ -55,7 +54,7 @@ elif selection == 'Projects':
                 st.info("Unpacks multi-year volatility using dual-axis temporal charts and statistical correlation matrices.")
                 st.markdown("### [🔗 Click Here to View](https://petrol-price-analysis-85op9jt3ujnbuaxlwjsbz7.streamlit.app)")
 
-    st.markdown("---")
+    #st.markdown("---")
 # Retail analysis
     with st.container(border=True):
             col1, col2 = st.columns([2, 3], gap="large")
@@ -72,7 +71,7 @@ This project empowers business operators to monitor key metrics; including Total
                     st.info("Streamlines inventory forecasting by combining real-time metric calculations with dynamic, visual charts that highlight regional sales variations and low-stock thresholds.")
                     st.markdown("### [🔗 Click Here to View](https://9uzcygkro6tdcxpfrgzphp.streamlit.app/)")
     
-            st.markdown("---")
+            #st.markdown("---")
     # customer billing app
     with st.container(border=True):
             col1, col2 = st.columns([2, 3], gap="large")
@@ -91,9 +90,9 @@ This project empowers business operators to monitor key metrics; including Total
                     st.markdown("### [🔗 Click here to inspect entries inside google sheete](https://docs.google.com/spreadsheets/d/1eosnb5f2t95W2HEnhrpVXT6UEi4MFxgRISZmNX1xq3Y/edit?gid=0#gid=0)")
                         
     
-            st.markdown("---")
+            #st.markdown("---")
 
-            #Exce; Sales Analysis 
+            # Excel Sales Analysis 
     with st.container(border=True):
         col1, col2 = st.columns([2, 3], gap="large")
         with col1:
@@ -115,7 +114,31 @@ This project empowers business operators to monitor key metrics; including Total
                     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                     ),
                     )
-    st.markdown("---")
+    #st.markdown("---")
+
+    #Data cleaning
+    with st.container(border=True):
+            col1, col2 = st.columns([2, 3], gap="large")
+            with col1:
+                st.subheader("Hotel Booking Data Cleansing & Structured Pipeline")
+                st.caption("Python | Pandas | Microsoft Excel | Data Transformation")
+                st.write(
+                    """An automated data-cleaning workflow designed to ingest, parse, and structure messy, multi-delimited records into clean tabular formats. This project addresses unformatted raw data entries containing mixed separators (~ and |) and inconsistent currency markers (₹, Rs, INR), transforming them into an analysis-ready dataset."""
+                )
+            with col2:
+                with st.container(border=True):
+                    st.info("### ***Key Insight:***")
+                    st.info("Converts raw, unstructured booking logs into clean, standardized database-ready records, significantly reducing manual data-entry overhead and improving reporting accuracy.")
+                    with open("Proj.xlsx", "rb") as file:
+                        st.download_button(
+                        label="🔗 Click Here to Download & View File",
+                        data=file,
+                        file_name="Proj.xlsx",
+                        mime=(
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                        ),
+                        )
+            #st.markdown("---")
 
 elif selection == 'Education':
     st.header('Educational Details')
@@ -195,49 +218,49 @@ with col1:
     st.write("📱 **Phone/WhatsApp:** Available upon request")
     st.write("[🔗 **Linkedin: ** ](https://www.linkedin.com/feed/)")
 
-with col2:
-  with st.container(border=True):
-    st.subheader("Send a Message")
-    contact_name = st.text_input("Your Name")
-    contact_email = st.text_input("Your Email")
-    contact_message = st.text_area(
-        "Project Scope or Job Opportunity Details"
-    )
+    with col2:
+        with st.container(border=True):
+            st.subheader("Send a Message")
+            contact_name = st.text_input("Your Name")
+            contact_email = st.text_input("Your Email")
+            contact_message = st.text_area(
+            "Type your query"
+            )
 
-    if st.button("Send Message"):
-      if contact_name and contact_message:
-        try:
-          sender_email = "zuhaib12325@gmail.com"
-          # Replace with your 16-character Google App Password
-          sender_password = st.secrets["SENDER_PASSWORD"]
-          receiver_email = "zuhaib12325@gmail.com"
+        if st.button("Send Message"):
+            if contact_name and contact_message:
+                try:
+                    sender_email = "zuhaib12325@gmail.com"
+                    # Replace with your 16-character Google App Password
+                    sender_password = st.secrets["SENDER_PASSWORD"]
+                    receiver_email = "zuhaib12325@gmail.com"
 
-          msg = MIMEMultipart()
-          msg["From"] = sender_email
-          msg["To"] = receiver_email
-          msg["Subject"] = f"Portfolio Inquiry from {contact_name}"
+                    msg = MIMEMultipart()
+                    msg["From"] = sender_email
+                    msg["To"] = receiver_email
+                    msg["Subject"] = f"Portfolio Inquiry from {contact_name}"
 
-          body = (
-              f"You have a new message from your portfolio app:\n\n"
-              f"Name: {contact_name}\n"
-              f"Email: {contact_email}\n\n"
-              f"Message:\n{contact_message}"
-          )
-          msg.attach(MIMEText(body, "plain"))
+                    body = (
+                        f"You have a new message from your portfolio app:\n\n"
+                        f"Name: {contact_name}\n"
+                        f"Email: {contact_email}\n\n"
+                        f"Message:\n{contact_message}"
+                    )
+                    msg.attach(MIMEText(body, "plain"))
 
-          server = smtplib.SMTP("smtp.gmail.com", 587)
-          server.starttls()
-          server.login(sender_email, sender_password)
-          server.sendmail(sender_email, receiver_email, msg.as_string())
-          server.quit()
+                    server = smtplib.SMTP("smtp.gmail.com", 587)
+                    server.starttls()
+                    server.login(sender_email, sender_password)
+                    server.sendmail(sender_email, receiver_email, msg.as_string())
+                    server.quit()
 
-          st.success(
-              "Thank you! Your message has been sent directly to my email."
-          )
+                    st.success(
+                        "Thank you! Your message has been sent directly to my email."
+                    )
 
-        except Exception as e:
-          st.error(
-              f"Failed to send message due to a technical error. Details: {e}"
-          )
-      else:
-        st.error("Please fill in your name and message before sending.")
+                except Exception as e:
+                    st.error(
+                        f"Failed to send message due to a technical error. Details: {e}"
+                    )
+            else:
+                st.error("Please fill in your name and message before sending.")
