@@ -53,9 +53,20 @@ elif selection == 'Projects':
                 with st.container(border=True):
                     st.info("### ***Key Insight:***")
                     st.info("Turns unformatted text records into structured data models, enabling quick calculations, top-performer identification, and visual business insights.")
+                    with open("Nest Aero Sales Data for 2013 & 2014.pdf", "rb") as pdf_file:
+                        st.download_button(
+                        label="🔗 Click Here to Download & View Raw Pdf File",
+                        data=pdf_file,
+                        file_name="Nest Aero Sales Data for 2013 & 2014.pdf",
+                        mime="application/pdf",
+                        )
+
+                        
+
+
                     with open("Nest_Aero_Sales_Extracted.xlsx", "rb") as file:
                         st.download_button(
-                        label="🔗 Click Here to Download & View File",
+                        label="🔗 Click Here to Download & View Clean File",
                         data=file,
                         file_name="Nest_Aero_Sales_Extracted.xlsx",
                         mime=(
