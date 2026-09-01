@@ -1,3 +1,7 @@
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import smtplib
+
 import streamlit as  st
 import pandas as pd
 st.set_page_config(page_title = 'PORTFOLIO',page_icon= "🚀",  layout = 'wide', initial_sidebar_state = 'auto')
@@ -36,6 +40,31 @@ if selection == 'About me':
 elif selection == 'Projects':
     st.header('My Projects')
     st.markdown('Explore a selection of industrial-grade web applications and data analytics tools designed to streamline business operations.')
+    # pdf to excel conversion 
+    with st.container(border=True):
+            col1, col2 = st.columns([2, 3], gap="large")
+            with col1:
+                st.subheader("PDF to Excel Data Automation & Business Analytics")
+                st.caption("Python | Pandas | Excel Automation | Pivot Tables & Visualization")
+                st.write(
+                    """An automated data engineering solution designed to extract, clean, and structure unstructured multi-page PDF documents into clean, analysis-ready tabular formats."""
+                )
+            with col2:
+                with st.container(border=True):
+                    st.info("### ***Key Insight:***")
+                    st.info("Turns unformatted text records into structured data models, enabling quick calculations, top-performer identification, and visual business insights.")
+                    with open("Nest_Aero_Sales_Extracted.xlsx", "rb") as file:
+                        st.download_button(
+                        label="🔗 Click Here to Download & View File",
+                        data=file,
+                        file_name="Nest_Aero_Sales_Extracted.xlsx",
+                        mime=(
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                        ),
+                        )
+    
+
+
         # Project: Pakistan Fuel Pricing & Crisis Analytics
     with st.container(border=True):
         col1, col2 = st.columns([2, 3], gap="large")
@@ -194,11 +223,7 @@ elif selection == 'Education':
 )
 elif selection == 'Contact':
     st.header('Contact Details')
-    from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-import smtplib
-import streamlit as st
-
+    
 st.markdown("## Get In Touch")
 st.write(
     "Open to full-time roles, freelance projects, and collaborations in"
@@ -232,7 +257,7 @@ with col1:
                 try:
                     sender_email = "zuhaib12325@gmail.com"
                     # Replace with your 16-character Google App Password
-                    sender_password = st.secrets["SENDER_PASSWORD"]
+                    sender_password = "wpqb upyq qntr odtu"
                     receiver_email = "zuhaib12325@gmail.com"
 
                     msg = MIMEMultipart()
