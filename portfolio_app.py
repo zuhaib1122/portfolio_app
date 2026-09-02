@@ -1,4 +1,4 @@
-from email.mime.multipart import MIMEMultipart
+    from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 
@@ -73,7 +73,35 @@ elif selection == 'Projects':
                         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                         ),
                         )
+
+
+
+    # Restaurant & Food Sales Data Analysis
+            with st.container(border=True):
+                col1, col2 = st.columns([2, 3], gap="large")
+                with col1:
+                    st.subheader("Restaurant & Food Sales Data Analysis")
+                    st.caption("Python | Pandas | Excel Automation | Pivot Tables & Business Insights")
+                    st.write(
+                        """A robust data cleaning and preparation pipeline designed to sanitize raw transaction records, resolve formatting inconsistencies, and structure messy food sales logs into clean, analysis-ready formats."""
+                    )
+                with col2:
+                    with st.container(border=True):
+                        st.info("### ***Key Insight:***")
+                        st.info("Eliminates data discrepancies and standardizes multi-column records to establish a reliable foundation for accurate transaction tracking and reporting.")
+                            
     
+    
+                        with open("zm_proj.xlsx", "rb") as file:
+                            st.download_button(
+                            label="🔗 Click Here to Download & View File",
+                            data=file,
+                            file_name="zm_proj.xlsx",
+                            mime=(
+                            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                            ),
+                            )
+        
 
 
         # Project: Pakistan Fuel Pricing & Crisis Analytics
@@ -235,68 +263,68 @@ elif selection == 'Education':
 elif selection == 'Contact':
     st.header('Contact Details')
     
-st.markdown("## Get In Touch")
-st.write(
+    st.markdown("## Get In Touch")
+    st.write(
     "Open to full-time roles, freelance projects, and collaborations in"
     " **Data Analysis, Machine Learning, and Industrial Automation Systems**."
-)
-
-col1, col2 = st.columns(2)
-
-with col1:
-  with st.container(border=True):
-    st.subheader("Direct Contact Info")
-    st.write("📍 **Location:** Lahore, Pakistan")
-    st.write(
-        "📧 **Email:**"
-        " [zuhaib12325@gmail.com](mailto:zuhaib12325@gmail.com)"
     )
-    st.write("📱 **Phone/WhatsApp:** Available upon request")
-    st.write("[🔗 **Linkedin: ** ](https://www.linkedin.com/feed/)")
 
-    with col2:
+    col1, col2 = st.columns(2)
+
+    with col1:
         with st.container(border=True):
-            st.subheader("Send a Message")
-            contact_name = st.text_input("Your Name")
-            contact_email = st.text_input("Your Email")
-            contact_message = st.text_area(
-            "Type your query"
-            )
+            st.subheader("Direct Contact Info")
+            st.write("📍 **Location:** Lahore, Pakistan")
+            st.write(
+            "📧 **Email:**"
+            " [zuhaib12325@gmail.com](mailto:zuhaib12325@gmail.com)"
+                )
+            st.write("📱 **Phone/WhatsApp:** Available upon request")
+            st.write("[🔗 **Linkedin: ** ](https://www.linkedin.com/feed/)")
 
-        if st.button("Send Message"):
-            if contact_name and contact_message:
-                try:
-                    sender_email = "zuhaib12325@gmail.com"
+        with col2:
+            with st.container(border=True):
+                st.subheader("Send a Message")
+                contact_name = st.text_input("Your Name")
+                contact_email = st.text_input("Your Email")
+                contact_message = st.text_area(
+                "Type your query"
+                )
+
+            if st.button("Send Message"):
+                if contact_name and contact_message:
+                    try:
+                        sender_email = "zuhaib12325@gmail.com"
                     # Replace with your 16-character Google App Password
-                    sender_password = "wpqb upyq qntr odtu"
-                    receiver_email = "zuhaib12325@gmail.com"
+                        sender_password = "wpqb upyq qntr odtu"
+                        receiver_email = "zuhaib12325@gmail.com"
 
-                    msg = MIMEMultipart()
-                    msg["From"] = sender_email
-                    msg["To"] = receiver_email
-                    msg["Subject"] = f"Portfolio Inquiry from {contact_name}"
+                        msg = MIMEMultipart()
+                        msg["From"] = sender_email
+                        msg["To"] = receiver_email
+                        msg["Subject"] = f"Portfolio Inquiry from {contact_name}"
 
-                    body = (
+                        body = (
                         f"You have a new message from your portfolio app:\n\n"
                         f"Name: {contact_name}\n"
                         f"Email: {contact_email}\n\n"
                         f"Message:\n{contact_message}"
                     )
-                    msg.attach(MIMEText(body, "plain"))
+                        msg.attach(MIMEText(body, "plain"))
 
-                    server = smtplib.SMTP("smtp.gmail.com", 587)
-                    server.starttls()
-                    server.login(sender_email, sender_password)
-                    server.sendmail(sender_email, receiver_email, msg.as_string())
-                    server.quit()
+                        server = smtplib.SMTP("smtp.gmail.com", 587)
+                        server.starttls()
+                        server.login(sender_email, sender_password)
+                        server.sendmail(sender_email, receiver_email, msg.as_string())
+                        server.quit()
 
-                    st.success(
+                        st.success(
                         "Thank you! Your message has been sent directly to my email."
-                    )
+                        )
 
-                except Exception as e:
-                    st.error(
+                    except Exception as e:
+                        st.error(
                         f"Failed to send message due to a technical error. Details: {e}"
                     )
-            else:
-                st.error("Please fill in your name and message before sending.")
+                    else:
+                        st.error("Please fill in your name and message before sending.")
