@@ -40,6 +40,24 @@ if selection == 'About me':
 elif selection == 'Projects':
     st.header('My Projects')
     st.markdown('Explore a selection of industrial-grade web applications and data analytics tools designed to streamline business operations.')
+    # Dashboard
+    with st.container(border=True):
+        col1, col2 = st.columns([2, 3], gap="large")
+        with col1:
+            st.subheader("Executive Sales & Customer Analytics Dashboard")
+            st.caption("Python | Pandas | Streamlit ")
+            st.write(
+                "An enterprise-grade, interactive sales and customer analytics dashboard built using Streamlit, Pandas, and Plotly Express. This project bridges the gap between raw retail data and strategic business intelligence, moving beyond basic exploratory data analysis (EDA) into multi-dimensional commercial insights. It is designed to provide stakeholders with an executive-level snapshot of revenue trends, geographic performance and category breakdowns."
+            )
+        with col2:
+            with st.container(border=True):
+                st.info("### ***Key Insight:***")
+                st.info("Highlights high-performing regional hubs alongside category market shares to pinpoint key revenue concentration.")
+                st.markdown("### [🔗 Click Here to View](https://dafbc8xwu8vzwfy8kh6gqo.streamlit.app/)")
+
+
+
+
     # pdf to excel conversion 
     with st.container(border=True):
             col1, col2 = st.columns([2, 3], gap="large")
