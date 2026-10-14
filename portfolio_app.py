@@ -40,6 +40,27 @@ if selection == 'About me':
 elif selection == 'Projects':
     st.header('My Projects')
     st.markdown('Explore a selection of industrial-grade web applications and data analytics tools designed to streamline business operations.')
+    # Rapido Travel Dashboard & Report
+    with st.container(border=True):
+        col1, col2 = st.columns([2, 3], gap="large")
+        with col1:
+            st.subheader("Fleet Management Dashboard & Professional Report")
+            st.caption("Python | Pandas | Streamlit ")
+            st.write(
+                "An end-to-end data pipeline and analytics platform that transforms"
+        " messy, raw ride-sharing trip logs into structured financial"
+        " intelligence, tracking Rapido fee overheads and net earnings after"
+        " fuel."
+                )
+            with col2:
+                with st.container(border=True):
+                    st.info("### ***Key Insight:***")
+                    st.info("Automates data cleaning on unstructured logs, providing dynamic vehicle-specific filtering, interactive monthly grouped bar charts, and executive audit report.")
+                    st.markdown("### [🔗 Click Here to View](https://7e2ew4rz6zgavhch6gnhjo.streamlit.app/)")
+    
+    
+
+    
     # Dashboard
     with st.container(border=True):
         col1, col2 = st.columns([2, 3], gap="large")
