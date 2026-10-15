@@ -10,7 +10,7 @@ with st.sidebar:
     st.title('Navigation')
     selection = st.radio('Goto', ['About me', 'Projects', 'Education', 'Contact'])
 if selection == 'About me':
-    col1, col2 = st.columns([1,3], gap='large')
+    col1, col2 = st.columns([1,3], gap='small', wrap = False)
     with col1:
         st.image('MY_PIC.jpeg', width=200)
     with col2:
