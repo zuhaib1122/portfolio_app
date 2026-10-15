@@ -10,7 +10,7 @@ with st.sidebar:
     st.title('Navigation')
     selection = st.radio('Goto', ['About me', 'Projects', 'Education', 'Contact'])
 if selection == 'About me':
-    col1, col2 = st.columns([1,3], gap='large', wrap = False)
+    col1, col2 = st.columns([1,3], wrap = False)
     with col1:
         st.image('MY_PIC.jpeg', width=200)
     with col2:
@@ -42,7 +42,7 @@ elif selection == 'Projects':
     st.markdown('Explore a selection of industrial-grade web applications and data analytics tools designed to streamline business operations.')
     # Rapido Travel Dashboard & Report
     with st.container(border=True):
-        col1, col2 = st.columns([2, 3], gap="large")
+        col1, col2 = st.columns([2, 3], wrap = False)
         with col1:
             st.subheader("Fleet Management Dashboard & Professional Report")
             st.caption("Python | Pandas | Streamlit ")
@@ -63,7 +63,7 @@ elif selection == 'Projects':
     
     # Dashboard
     with st.container(border=True):
-        col1, col2 = st.columns([2, 3], gap="large")
+        col1, col2 = st.columns([2, 3], wrap = False)
         with col1:
             st.subheader("Executive Sales & Customer Analytics Dashboard")
             st.caption("Python | Pandas | Streamlit ")
