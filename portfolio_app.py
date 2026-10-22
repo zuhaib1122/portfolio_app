@@ -10,7 +10,7 @@ with st.sidebar:
     st.title('Navigation')
     selection = st.radio('Goto', ['About me', 'Projects', 'Education', 'Contact'])
 if selection == 'About me':
-    col1, col2 = st.columns([1,3], wrap = False)
+    col1, col2 = st.columns([1,3], gap='large')
     with col1:
         st.image('MY_PIC.jpeg', width=200)
     with col2:
@@ -40,9 +40,26 @@ if selection == 'About me':
 elif selection == 'Projects':
     st.header('My Projects')
     st.markdown('Explore a selection of industrial-grade web applications and data analytics tools designed to streamline business operations.')
+    # HVAC chiller performance dashboard and analytics
+    with st.container(border=True):
+        col1, col2 = st.columns([2, 3], gap="large")
+        with col1:
+            st.subheader("HVAC Chiller Performance & Energy Analytics")
+            st.caption("Python | Pandas | matplotlib | Streamlit ")
+            st.write("An end-to-end operational analytics platform that models building cooling loads and evaluates chiller energy efficiency, identifying performance bottlenecks and tracking power consumption patterns.")
+                    
+            with col2:
+                with st.container(border=True):
+                    st.info("### ***Key Insight:***")
+                    st.info("Integrates thermal load modeling with interactive data visualizations to deliver real-time operational insights and predictive performance analytics.")
+                    st.markdown("### [🔗 Click Here to View](https://xtfeuvyb6gjtkgxdvxauem.streamlit.app/)")
+        
+        
+
+
     # Rapido Travel Dashboard & Report
     with st.container(border=True):
-        col1, col2 = st.columns([2, 3], wrap = False)
+        col1, col2 = st.columns([2, 3], gap="large")
         with col1:
             st.subheader("Fleet Management Dashboard & Professional Report")
             st.caption("Python | Pandas | Streamlit ")
@@ -63,7 +80,7 @@ elif selection == 'Projects':
     
     # Dashboard
     with st.container(border=True):
-        col1, col2 = st.columns([2, 3], wrap = False)
+        col1, col2 = st.columns([2, 3], gap="large")
         with col1:
             st.subheader("Executive Sales & Customer Analytics Dashboard")
             st.caption("Python | Pandas | Streamlit ")
@@ -81,7 +98,7 @@ elif selection == 'Projects':
 
     # pdf to excel conversion 
     with st.container(border=True):
-            col1, col2 = st.columns([2, 3], wrap = False)
+            col1, col2 = st.columns([2, 3], gap="large")
             with col1:
                 st.subheader("PDF to Excel Data Automation & Business Analytics")
                 st.caption("Python | Pandas | Excel Automation | Pivot Tables & Visualization")
@@ -117,7 +134,7 @@ elif selection == 'Projects':
 
     # Restaurant & Food Sales Data Analysis
             with st.container(border=True):
-                col1, col2 = st.columns([2, 3], wrap = False)
+                col1, col2 = st.columns([2, 3], gap="large")
                 with col1:
                     st.subheader("Restaurant & Food Sales Data Analysis")
                     st.caption("Python | Pandas | Excel Automation | Pivot Tables & Business Insights")
@@ -145,7 +162,7 @@ elif selection == 'Projects':
 
         # Project: Pakistan Fuel Pricing & Crisis Analytics
     with st.container(border=True):
-        col1, col2 = st.columns([2, 3], wrap = False)
+        col1, col2 = st.columns([2, 3], gap="large")
         with col1:
             st.subheader("Pakistan Fuel Pricing & Crisis Analytics (2020–2026)")
             st.caption("Python | Pandas | Streamlit | Matplotlib & Seaborn | Correlation Analysis")
@@ -164,7 +181,7 @@ elif selection == 'Projects':
     #st.markdown("---")
 # Retail analysis
     with st.container(border=True):
-            col1, col2 = st.columns([2, 3], wrap = False)
+            col1, col2 = st.columns([2, 3], gap="large")
             with col1:
                 st.subheader("Retail Analytics & Inventory Optimization ")
                 st.caption("Python | Pandas | Streamlit | Plotly | CSV Data Processing")
@@ -181,7 +198,7 @@ This project empowers business operators to monitor key metrics; including Total
             #st.markdown("---")
     # customer billing app
     with st.container(border=True):
-            col1, col2 = st.columns([2, 3], wrap = False)
+            col1, col2 = st.columns([2, 3], gap="large")
             with col1:
                 st.subheader("Customer Billing & Cloud Portal")
                 st.caption("Python | Streamlit | Gspread | Google Sheets API | Cloud Secrets Management")
@@ -201,7 +218,7 @@ This project empowers business operators to monitor key metrics; including Total
 
             # Excel Sales Analysis 
     with st.container(border=True):
-        col1, col2 = st.columns([2, 3], wrap = False)
+        col1, col2 = st.columns([2, 3], gap="large")
         with col1:
             st.subheader("Excel Business Intelligence & Multi-Sheet Pivot Reporting")
             st.caption("Advanced Excel | PivotTables | Conditional Formatting | Data Modeling")
@@ -225,7 +242,7 @@ This project empowers business operators to monitor key metrics; including Total
 
     #Data cleaning
     with st.container(border=True):
-            col1, col2 = st.columns([2, 3], wrap = False)
+            col1, col2 = st.columns([2, 3], gap="large")
             with col1:
                 st.subheader("Hotel Booking Data Cleansing & Structured Pipeline")
                 st.caption("Python | Pandas | Microsoft Excel | Data Transformation")
@@ -252,7 +269,7 @@ elif selection == 'Education':
 # bachlors
     with st.container(border=True):
         st.subheader('Graduation')
-        col1,col2 = st.columns([3,2], wrap = False)
+        col1,col2 = st.columns([3,2], gap="large")
         with col1:
             st.markdown('### Bachelors of Science in Mathematics (BS-Math)')
             st.caption('Virtual University of Pakistan')
@@ -267,7 +284,7 @@ elif selection == 'Education':
                 # diploma
     with st.container(border=True):
             st.subheader('DAE')
-            col1,col2 = st.columns([3,2], wrap = False)
+            col1,col2 = st.columns([3,2], gap="large")
             with col1:
                 st.markdown('### Diploma of Associate Engineering in RAC Technology')
                 st.caption('Govt college of technology railway road Lahore')
@@ -308,7 +325,7 @@ elif selection == 'Contact':
     " **Data Analysis, Machine Learning, and Industrial Automation Systems**."
     )
 
-    col1, col2 = st.columns(2, wrap = False)
+    col1, col2 = st.columns(2)
 
     with col1:
         with st.container(border=True):
