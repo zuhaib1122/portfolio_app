@@ -44,6 +44,24 @@ elif selection == 'Projects':
     with st.container(border=True):
         col1, col2 = st.columns([2, 3], gap="large")
         with col1:
+            st.subheader("Supervised HVAC Machine Learning Model")
+            st.caption("Python | Pandas | Scikit-Learn  | Streamlit ")
+            st.write("A machine learning web application that accurately predicts commercial building thermal loads in real time, helping engineers optimize chiller operational efficiency and prevent energy waste.")
+                        
+        with col2:
+            with st.container(border=True):
+                st.info("### ***Key Insight:***")
+                st.info("Employs a compressed Random Forest model (96% test accuracy) with automated feature engineering to convert live ambient and hydronic inputs into actionable cooling load estimates.")
+                st.markdown("### [🔗 Click Here to View](https://chbapwlbm8ysf9pnxcwh9t.streamlit.app/)")
+    
+
+
+
+
+    # HVAC chiller performance dashboard and analytics
+    with st.container(border=True):
+        col1, col2 = st.columns([2, 3], gap="large")
+        with col1:
             st.subheader("HVAC Chiller Performance & Energy Analytics")
             st.caption("Python | Pandas | matplotlib | Streamlit ")
             st.write("An end-to-end operational analytics platform that models building cooling loads and evaluates chiller energy efficiency, identifying performance bottlenecks and tracking power consumption patterns.")
